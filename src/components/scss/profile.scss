@@ -1,0 +1,161 @@
+.profile{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color:#2a2a2a;
+
+  .profile_info{
+    color: white;
+    font-size: 22px;
+    left: 30vw;
+    top: 35vh;
+    width: 40vw;
+    height: 30vh;
+    position: absolute;
+    transition: .2s;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .profile_info-active{
+    color: white;
+    font-size: 22px;
+    left: 30vw;
+    top: 35vh;
+    width: 40vw;
+    height: 30vh;
+    position: absolute;
+    transition: .2s;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .icon_chart{
+      opacity: 0.6;
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+      transition: .1s;
+      width: 50px;
+      cursor: pointer;
+      &:hover{
+        opacity: 1;
+      }
+    }
+    .animSvg{
+      stroke-dasharray:178 ;
+      stroke-dashoffset: 178;
+      animation: animIcons 2s ease-in-out 0.5s 1;
+      animation-fill-mode:forwards;
+      fill:orange;
+      fill-opacity: 0;
+    }
+    @keyframes animIcons {
+      90%{
+      fill-opacity: 0;
+      }
+      100%{
+      stroke-dashoffset: 0;
+      stroke-dasharray:178;
+      fill-opacity: 1;
+      fill: orange;
+      }
+    }
+  }
+  .charts{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+  }
+  .chartBar{
+    width: 40vw;
+    height: 30vh;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: .2s;
+    // transition-delay: .1s;
+  }
+  .chartBar-active{
+    width: 40vw;
+    height: 30vh;
+    z-index: 1;
+    opacity: 1;
+    visibility: visible;
+    transition: .2s;
+    // transition-delay: .1s;
+  }
+  .chartBar_horizontal{
+    width: 40vw;
+    height: 30vh;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: .2s;
+  }  .chartBar_horizontal-active{
+    width: 40vw;
+    height: 30vh;
+    z-index: 1;
+    opacity: 1;
+    visibility: visible;
+    transition: .2s;
+  }
+}
+.profile_title {
+  color: white;
+  position: absolute;
+  top: 15vh;
+  left: 30vw;
+  display: inline-block;
+  width: 7ch;
+  font-size: 40px;
+  overflow: hidden;
+  font-family: monospace;
+  white-space: nowrap;
+  border-right: 4px solid orange;
+  animation: flashing-border 0.75s step-end infinite, printed-text 3s steps(7);
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+  visibility: hidden;
+  opacity: 0;
+}
+.profile_title-active {
+  color: white;
+  position: absolute;
+  top: 15vh;
+  left: 30vw;
+  display: inline-block;
+  width: 7ch;
+  font-size: 40px;
+  overflow: hidden;
+  font-family: monospace;
+  white-space: nowrap;
+  border-right: 4px solid orange;
+  animation: flashing-border 0.75s step-end infinite, printed-text 1s steps(7);
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+  visibility: visible;
+  opacity: 1;
+}
+
+@keyframes flashing-border {
+  0% {
+    border-color: orange;
+  }
+  50% {
+    border-color: transparent;
+  }
+  100% {
+    border-color: orange;
+  }
+}
+@keyframes printed-text {
+  from{
+    width: 0;      
+  }
+}

@@ -1,0 +1,105 @@
+.Case {
+  background-color: #2a2a2a;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 5vw;
+  right: 0;
+  bottom: 0;
+  .slider-case {
+    width: 80vw;
+    height: 90vh;
+    position: absolute;
+    left: 220px;
+    top: 5vh;
+    .slide {
+      height: 90vh;
+      .title {
+        margin: 30px 0 0 0;
+
+        left: 30vw;
+        color: white;
+        display: inline-block;
+        animation-direction: alternate;
+        width: 24ch;
+        font-size: 40px;
+        font-family: monospace;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 4px solid orange;
+        animation-fill-mode: forwards;
+        animation: flashing-border 0.75s step-end infinite,
+          printed-text 3s steps(24);
+      }
+
+      @keyframes flashing-border {
+        0% {
+          border-color: orange;
+        }
+        50% {
+          border-color: transparent;
+        }
+        100% {
+          border-color: orange;
+        }
+      }
+      @keyframes printed-text {
+        from {
+          width: 0;
+        }
+      }
+      .certificates {
+        display: flex;
+        height: 90%;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        .cert {
+          color: white;
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          z-index: 5;
+          p {
+            width: 40vw;
+            font-size: 30px;
+            span {
+              font-size: 18px;
+            }
+          }
+
+          img {
+            height: 25vh;
+            z-index: 5;
+            transition: 0.2s;
+            &:hover {
+            }
+          }
+        }
+      }
+    }
+    .examples{
+      display: flex;
+      flex-wrap: wrap;
+      align-items:center;
+      height: 90%;
+      justify-content: space-between;
+      .card{
+        width: 500px;
+        height: 300px;
+        border-radius: 10px;
+        border: 1px solid whitesmoke;
+        background-image: url('../sources/vid.mp4');
+        background-position: center;
+        background-size: contain;
+        z-index: 6;
+      }
+    }
+    .slick-arrow {
+      display: none;
+      position: absolute;
+      right: 0px;
+      visibility: hidden;
+    }
+  }
+}
